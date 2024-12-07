@@ -10,7 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import TransactionsTable from "./Transaction";
 import ChartComponent from "./Charts";
 
-
+import "../styles/dashboard.css"
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
