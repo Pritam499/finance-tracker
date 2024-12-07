@@ -1,36 +1,64 @@
+:root {
+    --primary-purple: #6c63ff; /* Main purple color */
+    --primary-purple-gradient: linear-gradient(315deg, #6842ef 0%, #8161f4 74%);
+    --white: #fff;
+    --text-dark: #222;
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --shadow-strong: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
 .mycard {
     box-shadow: var(--shadow-color);
     min-width: 19rem;
     font-family: 'Montserrat', sans-serif;
     flex: 1;
+    background-color: var(--white);
+    border-radius: 0.75rem; /* Rounded corners for modern look */
+    overflow: hidden; /* Ensure content stays within the card */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mycard:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: var(--shadow-strong); /* Enhanced shadow on hover */
 }
 
 .current-balance {
     color: var(--white);
     background-color: var(--primary-purple);
-    /* background-image: linear-gradient(315deg, #6842EF 0%, #8161f4 74%); */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+    background-image: var(--primary-purple-gradient); /* Gradient for modern appeal */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-strong);
+    text-align: center;
 }
 
 .current-balance h2 {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .current-balance p {
-    font-size: 1.9rem !important;
-    font-weight: 600 !important;
-    text-shadow: var(--shadow-color) !important;
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 .title {
     font-size: 1.1rem;
     text-align: left;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
 }
 
 .mycard p {
     font-size: 1rem;
     font-weight: 500;
     margin-block: 1.5rem;
+    color: var(--text-dark);
+    line-height: 1.5;
 }
 
 .card-row {
@@ -44,10 +72,44 @@
 }
 
 .reset-balance-btn {
-    padding: .5rem !important;
+    padding: 0.6rem 1rem;
+    background-color: var(--primary-purple);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
 }
 
 .reset-balance-btn:hover {
+    background-color: #524bdb; /* Slightly darker purple for hover */
     letter-spacing: 1px;
-    color: var(--white) !important;
+    color: var(--white);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+@media (max-width: 759px) {
+    .mycard {
+        min-width: 100%; /* Cards take full width on smaller screens */
+    }
+
+    .card-row {
+        gap: 1rem;
+        width: 100%; /* Adjust container width */
+    }
+
+    .current-balance h2 {
+        font-size: 1.2rem;
+    }
+
+    .current-balance p {
+        font-size: 1.5rem;
+    }
+
+    .reset-balance-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
 }

@@ -1,3 +1,20 @@
+:root {
+    --primary-purple: #6c63ff; /* Adjusted to a more vibrant shade */
+    --black: #333; /* Slightly lighter for contrast */
+    --shadow-color: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --background-light: #f9f9f9;
+    --text-dark: #222;
+    --text-gray: #555;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
 .signup-wrapper {
     width: 60vw;
     max-width: 400px;
@@ -6,42 +23,66 @@
     padding: 2rem;
     padding-bottom: 1.2rem;
     border-radius: 1rem;
+    background-color: #fff; /* Better contrast */
+    margin: 2rem auto; /* Center the wrapper */
 }
 
 .title {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Increased for visibility */
+    font-weight: 600;
     text-align: center;
     margin-bottom: 1.5rem;
+    color: var(--primary-purple);
 }
 
 .or-name {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--black);
+    color: var(--text-gray);
     text-align: center;
-    margin-block: .4rem;
+    margin-block: 0.6rem;
 }
 
 .have-an-account {
-    margin-top: .9rem;
-    font-size: .8rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
     text-align: center;
     font-weight: 500;
+    color: var(--text-dark);
+}
+
+.have-an-account span {
+    cursor: pointer;
+    color: var(--primary-purple);
 }
 
 .have-an-account span:hover {
-    color: var(--primary-purple);
-    transition: ease-in-out .3s;
+    color: #524bdb; /* Slightly darker purple */
+    transition: color 0.3s ease-in-out;
 }
 
 .FcGoogle {
-    margin-right: .5rem;
-    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    font-size: 1.4rem; /* Slightly larger for better alignment */
 }
 
 @media (max-width: 759px) {
     .signup-wrapper {
         width: 90vw;
         margin-top: 2.5rem;
+        padding: 1.5rem;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .or-name {
+        font-size: 0.9rem;
+    }
+
+    .have-an-account {
+        font-size: 0.75rem;
     }
 }

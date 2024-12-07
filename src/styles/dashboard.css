@@ -1,0 +1,260 @@
+/* General Container Styling */
+.container {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+/* Cards Section */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap; /* Ensure the cards don't wrap */
+}
+
+/* Card Styling */
+.card {
+    flex: 1;
+    min-width: 25%;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-color);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+}
+
+/* Current Balance, Total Income, Total Expenses */
+.current-balance, .total-income, .total-expenses {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.current-balance h3, .total-income h3, .total-expenses h3 {
+    font-size: 1.4rem;
+}
+
+.current-balance p, .total-income p, .total-expenses p {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Transactions Section */
+.transactions-section {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.transactions-table {
+    width: 100%;
+    box-shadow: var(--shadow-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    overflow-x: auto; /* Fix horizontal scrolling issue */
+}
+
+.transactions-table h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Search & Filter Section */
+.search-and-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.search-bar, .select-filter {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 48%;
+}
+
+.search-bar {
+    flex-grow: 1; /* Allow search bar to grow in width if needed */
+}
+
+.select-filter {
+    min-width: 150px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Dropdown Arrow */
+.select-filter::after {
+    content: '\2193'; /* Downward Arrow */
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+}
+
+/* Dropdown Options Styling */
+.select-filter select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    outline: none;
+}
+
+.select-filter select:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 5px var(--primary-purple);
+}
+
+.select-filter select:hover {
+    border-color: #999;
+}
+
+.select-filter select option {
+    padding: 0.8rem;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Hover and Focus State */
+.select-filter:hover,
+.select-filter:focus-within {
+    border-color: var(--primary-purple);
+}
+
+.select-filter:focus-within {
+    box-shadow: 0 0 5px var(--primary-purple);
+}
+
+/* Import, Export, Sort Section */
+.import-export-sort {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.import-export-sort button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: var(--primary-purple);
+    color: var(--white);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.import-export-sort button:hover {
+    background-color: #333;
+    border: none;
+}
+
+/* "No Transactions" Section */
+.no-transaction {
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.no-transaction img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        min-width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    .transactions-section {
+        margin-top: 1rem;
+    }
+
+    .search-and-filter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar, .select-filter {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .import-export-sort {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .import-export-sort button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .transactions-table {
+        font-size: 0.9rem;
+    }
+
+    .transactions-table h2 {
+        font-size: 1.2rem;
+    }
+
+    .search-and-filter {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-bar, .select-filter {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .import-export-sort button {
+        padding: 0.5rem;
+    }
+
+    .transactions-table {
+        font-size: 0.8rem;
+    }
+}
