@@ -2,6 +2,8 @@
 
 A responsive full stack **Finance Tracker** built with **React**, **Firebase**, and **Tailwind CSS**. This app allows users to manage their income and expenses with a clean UI, real-time data sync, and persistent authentication.
 
+**Live Link:** https://finance-man.netlify.app/
+
 ---
 
 ## 🚀 Features
